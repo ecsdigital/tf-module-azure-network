@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-      TF_VAR_subscription_id = ""
+      TF_VAR_subscription_id = credential(cred_subscription_id)
       TF_VAR_client_id = ""
       TF_VAR_client_secret = ""
       TF_VAR_tenant_id = ""
@@ -9,6 +9,7 @@ pipeline {
     stages {
         stage('Terraform Init') {
             steps {
+                sh "echo $TF_VAR_subscription_id"
                 sh 'terraform init -input=false'
             }
         }
@@ -35,6 +36,7 @@ pipeline {
         }
         stage('Terraform Kitchen') {
             steps {
+                sh 'bundle install'
                 sh 'kitchen test'
             }
         }
