@@ -1,0 +1,23 @@
+---
+driver:
+  name: terraform
+  root_module_directory: test/integration/fixtures
+  parallelism: 1
+  variable_files:
+    - test/integration/fixtures/testing.tfvars
+
+provisioner:
+  name: terraform
+
+platforms:
+  - name: azure
+
+verifier:
+  name: terraform
+  groups:
+    - name: default
+      controls:
+        - vnet
+        - webapp_nsg
+suites:
+  - name: "default"

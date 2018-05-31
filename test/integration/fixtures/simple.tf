@@ -11,7 +11,7 @@ provider "azurerm" {
 }
 
 module "network" {
-  source              = "../../"
+  source              = "../../../"
   resource-group-name = "demo-lbg"
 }
 

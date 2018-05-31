@@ -1,5 +1,9 @@
 *.DS_Store
 *.tfvars
 *.tfstate*
-.terraform
 *.tfvars*
+Gemfile.lock
+
+.terraform
+.kitchen
+terraform.tfstate.d
