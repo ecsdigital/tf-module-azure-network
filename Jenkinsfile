@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Terraform Init') {
             steps {
+                // test
                 sh 'ls -la'
                 sh 'terraform init -input=false'
             }
