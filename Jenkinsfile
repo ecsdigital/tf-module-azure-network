@@ -52,7 +52,8 @@ pipeline {
                 // Create new relase in Github
                 echo 'New module updated in Terraform Enterprise'
                 sh "git tag v1.0.$BUILD_NUMBER"
-                
+                sh "git push origin master v1.0.$BUILD_NUMBER"
+
             }
         }
     }
