@@ -51,6 +51,7 @@ pipeline {
             steps {
                 // Create new relase in Github
                 echo 'New module updated in Terraform Enterprise'
+                sh "printenv"
             }
         }
     }
