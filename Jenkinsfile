@@ -37,7 +37,9 @@ pipeline {
         stage('Terraform Kitchen') {
             steps {
                 sh 'bundle install'
-                sh 'kitchen test'
+                sh 'bundle exec kitchen converge'
+                sh 'bundle exec kitchen verify'
+                sh 'bundle exec kitchen destroy'
             }
         }
         stage('Approve new module') {
