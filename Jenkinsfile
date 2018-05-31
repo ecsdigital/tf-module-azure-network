@@ -49,10 +49,10 @@ pipeline {
         }
         stage('Release new module') {
             steps {
-                // Create new relase in Github
-                echo 'New module updated in Terraform Enterprise'
-                sh "git tag v1.0.$BUILD_NUMBER"
-                sh "git push origin master v1.0.$BUILD_NUMBER"
+                withCredentials([usernamePassword(credentialsId: "cred_github_enterprise", passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                    sh "git tag v1.0.$BUILD_NUMBER"
+                    sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.ecs-digital.co.uk/lloyds-tfe/tf-module-azure-network.git v1.0.$BUILD_NUMBER"
+                }
 
             }
         }
