@@ -8,7 +8,7 @@ control "vnet" do
   # Define how critical this control is.
   impact 0.6
   # The actual test case.
-  describe file("terraform.tfstate.d/kitchen-terraform-default-azure/terraform.tfstate") do
+  describe "The Azure Virtual Network" do
 
     subject do "azurerm_virtual_network" end
 

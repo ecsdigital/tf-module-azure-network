@@ -3,8 +3,8 @@ driver:
   name: terraform
   root_module_directory: test/integration/fixtures
   parallelism: 1
-  variable_files:
-    - test/integration/fixtures/testing.tfvars
+  # variable_files:
+  #   - test/integration/fixtures/testing.tfvars
 
 provisioner:
   name: terraform

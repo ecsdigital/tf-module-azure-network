@@ -8,7 +8,7 @@ control "webapp_nsg" do
   # Define how critical this control is.
   impact 0.6
   # The actual test case.
-  describe file("terraform.tfstate.d/kitchen-terraform-default-azure/terraform.tfstate") do
+  describe "The Azure Network Security Group" do
 
     subject do "azurerm_network_security_group" end
 
