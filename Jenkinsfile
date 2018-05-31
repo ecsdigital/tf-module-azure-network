@@ -37,9 +37,9 @@ pipeline {
         stage('Terraform Kitchen') {
             steps {
                 sh 'bundle install'
-                sh 'bundle exec kitchen converge'
-                sh 'bundle exec kitchen verify'
-                sh 'bundle exec kitchen destroy'
+                // sh 'bundle exec kitchen converge'
+                // sh 'bundle exec kitchen verify'
+                // sh 'bundle exec kitchen destroy'
             }
         }
         stage('Approve new module') {
@@ -51,7 +51,8 @@ pipeline {
             steps {
                 // Create new relase in Github
                 echo 'New module updated in Terraform Enterprise'
-                sh "printenv"
+                sh "git tag v1.0.$BUILD_NUMBER"
+                
             }
         }
     }
