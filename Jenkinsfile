@@ -36,6 +36,7 @@ pipeline {
         }
         stage('Terraform Kitchen') {
             steps {
+                // This is Kitchen
                 sh 'bundle install'
                 // sh 'bundle exec kitchen converge'
                 // sh 'bundle exec kitchen verify'
