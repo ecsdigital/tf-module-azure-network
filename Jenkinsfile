@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-      TF_VAR_subscription_id = credential(cred_subscription_id)
+      TF_VAR_subscription_id = credentials(cred_subscription_id)
       TF_VAR_client_id = ""
       TF_VAR_client_secret = ""
       TF_VAR_tenant_id = ""
