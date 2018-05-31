@@ -2,9 +2,9 @@ pipeline {
     agent any
     environment {
       TF_VAR_subscription_id = credentials('cred_subscription_id')
-      TF_VAR_client_id = ""
-      TF_VAR_client_secret = ""
-      TF_VAR_tenant_id = ""
+      TF_VAR_client_id = credentials('cred_client_id')
+      TF_VAR_client_secret = credentials('cred_client_secret')
+      TF_VAR_tenant_id = credentials('cred_tenant_id')
     }
     stages {
         stage('Terraform Init') {
