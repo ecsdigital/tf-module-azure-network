@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     environment {
       TF_VAR_subscription_id = ""
       TF_VAR_client_id = ""
