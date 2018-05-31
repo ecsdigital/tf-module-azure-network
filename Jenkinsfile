@@ -1,8 +1,9 @@
 pipeline {
-    agent none 
+    agent none
     stages {
         stage('Terraform Init') {
             steps {
+                sh 'ls -la'
                 sh 'terraform init -input=false'
             }
         }
