@@ -39,7 +39,7 @@ pipeline {
         }
         stage('Release new module') {
             steps {
-                // REST API call to update TFE with new version
+                // Create new relase in Github
                 echo 'New module updated in Terraform Enterprise'
             }
         }
